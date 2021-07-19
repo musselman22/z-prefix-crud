@@ -17,7 +17,7 @@ function Tasks() {
     <div>
       {tasks !== [] && tasks.map((item, index) => {
         return (
-          <div key={index}>{item.task}</div>
+          <div key={index}>{item.title}</div>
         )
       })}
     </div>

@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start:knex": "npx knex migrate:rollback && npx knex migrate:latest && npx knex seed:run",
+    "start": "npm run start:knex && node server.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "",
@@ -16,6 +17,8 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "express-cors": "^0.0.3"
+    "express-cors": "^0.0.3",
+    "knex": "^0.95.7",
+    "pg": "^8.6.0"
   }
 }
