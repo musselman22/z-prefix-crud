@@ -4,8 +4,7 @@ exports.up = function (knex) {
     table.increments('task_id'); // adds an auto incrementing PK column
     table.string('title');
     table.string('description');
-    table.string('status');
-    table.timestamps(true, true); // adds created_at and updated_at
+    table.boolean('status');
   });
 };
 
